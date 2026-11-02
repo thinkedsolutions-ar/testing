@@ -1,58 +1,34 @@
 ```mermaid
 graph TD
-    %% Estilos
-    classDef empleado fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0f172a;
-    classDef jefe fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a;
-    classDef rrhh fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#0f172a;
-    classDef operacion fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#0f172a;
-    classDef finanzas fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#0f172a;
-
     %% Nodos
-    A([Inicio: Empleado ingresa a Mis Vacaciones]) ::: empleado
+    A([Inicio: Empleado ingresa a Mis Vacaciones])
+    B{Tiene fecha de ingreso y saldo según LCT?}
+    C[El sistema calcula días y alerta si es menos de 7 días o si es temporada alta]
+    D[Envía Solicitud de Vacaciones]
     
-    B{Tiene fecha de ingreso y saldo según LCT?} ::: empleado
+    E([Responsable de Sector recibe solicitud])
+    F{Supera el cupo máximo de ausencias del sector?}
+    G[ALERTA: Se compromete la operación]
+    H{Decisión de Jefatura}
     
-    C[El sistema calcula días y alerta si es menos de 7 días o si es temporada alta] ::: empleado
+    I[Rechaza Solicitud]
+    J[Modifica Fechas]
+    K[Aprueba Solicitud Justifica si es menos de 7 días]
     
-    D[Envía Solicitud de Vacaciones] ::: empleado
+    L([Capital Humano recibe solicitud aprobada])
+    M{Cumple alternancia Verano / Invierno?}
+    N[ALERTA: Tuvo verano el año pasado]
+    O[Genera e Imprime Planilla Oficial]
+    P[Firma de puño y letra Empleado + Jefe]
+    Q[Se archiva en Legajo físico Estado: ARCHIVADO]
     
-    E([Responsable de Sector recibe solicitud]) ::: jefe
+    R([IMPACTO OPERATIVO INMEDIATO])
+    S[Diagramación: Conductor bloqueado para asignación en esas fechas]
+    T[Taller: Mecánico excluido de controles matutinos]
     
-    F{Supera el cupo máximo de ausencias del sector?} ::: jefe
-    
-    G[ALERTA: Se compromete la operación] ::: jefe
-    
-    H{Decisión de Jefatura} ::: jefe
-    
-    I[Rechaza Solicitud] ::: jefe
-    
-    J[Modifica Fechas] ::: jefe
-    
-    K[Aprueba Solicitud Justifica si es menos de 7 días] ::: jefe
-    
-    L([Capital Humano recibe solicitud aprobada]) ::: rrhh
-    
-    M{Cumple alternancia Verano / Invierno?} ::: rrhh
-    
-    N[ALERTA: Tuvo verano el año pasado] ::: rrhh
-    
-    O[Genera e Imprime Planilla Oficial] ::: rrhh
-    
-    P[Firma de puño y letra Empleado + Jefe] ::: rrhh
-    
-    Q[Se archiva en Legajo físico Estado: ARCHIVADO] ::: rrhh
-    
-    R([IMPACTO OPERATIVO INMEDIATO]) ::: operacion
-    
-    S[Diagramación: Conductor bloqueado para asignación en esas fechas] ::: operacion
-    
-    T[Taller: Mecánico excluido de controles matutinos] ::: operacion
-    
-    U([Administración y Finanzas]) ::: finanzas
-    
-    V[Exporta reporte mensual CSV] ::: finanzas
-    
-    W([FIN: Vacaciones Liquidadas]) ::: finanzas
+    U([Administración y Finanzas])
+    V[Exporta reporte mensual CSV]
+    W([FIN: Vacaciones Liquidadas])
 
     %% Conexiones
     A --> B
@@ -89,3 +65,16 @@ graph TD
     Q --> U
     U --> V
     V --> W
+
+    %% Estilos (Aplicados por clases separadas para compatibilidad con GitHub)
+    class A,B,C,D empleado;
+    class E,F,G,H,I,J,K jefe;
+    class L,M,N,O,P,Q rrhh;
+    class R,S,T operacion;
+    class U,V,W finanzas;
+
+    classDef empleado fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0f172a;
+    classDef jefe fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a;
+    classDef rrhh fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#0f172a;
+    classDef operacion fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#0f172a;
+    classDef finanzas fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#0f172a;
