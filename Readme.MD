@@ -1,7 +1,3 @@
-# Proceso de Vacaciones
-
-Aquí tienes el diagrama de flujo del circuito de vacaciones:
-
 ```mermaid
 graph TD
     %% Estilos
