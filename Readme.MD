@@ -9,32 +9,49 @@ graph TD
 
     %% Nodos
     A([Inicio: Empleado ingresa a Mis Vacaciones]) ::: empleado
+    
     B{Tiene fecha de ingreso y saldo según LCT?} ::: empleado
+    
     C[El sistema calcula días y alerta si es menos de 7 días o si es temporada alta] ::: empleado
+    
     D[Envía Solicitud de Vacaciones] ::: empleado
     
     E([Responsable de Sector recibe solicitud]) ::: jefe
+    
     F{Supera el cupo máximo de ausencias del sector?} ::: jefe
+    
     G[ALERTA: Se compromete la operación] ::: jefe
+    
     H{Decisión de Jefatura} ::: jefe
     
     I[Rechaza Solicitud] ::: jefe
+    
     J[Modifica Fechas] ::: jefe
+    
     K[Aprueba Solicitud Justifica si es menos de 7 días] ::: jefe
     
     L([Capital Humano recibe solicitud aprobada]) ::: rrhh
+    
     M{Cumple alternancia Verano / Invierno?} ::: rrhh
+    
     N[ALERTA: Tuvo verano el año pasado] ::: rrhh
+    
     O[Genera e Imprime Planilla Oficial] ::: rrhh
+    
     P[Firma de puño y letra Empleado + Jefe] ::: rrhh
+    
     Q[Se archiva en Legajo físico Estado: ARCHIVADO] ::: rrhh
     
     R([IMPACTO OPERATIVO INMEDIATO]) ::: operacion
+    
     S[Diagramación: Conductor bloqueado para asignación en esas fechas] ::: operacion
+    
     T[Taller: Mecánico excluido de controles matutinos] ::: operacion
     
     U([Administración y Finanzas]) ::: finanzas
+    
     V[Exporta reporte mensual CSV] ::: finanzas
+    
     W([FIN: Vacaciones Liquidadas]) ::: finanzas
 
     %% Conexiones
